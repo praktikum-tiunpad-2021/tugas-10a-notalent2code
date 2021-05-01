@@ -6,11 +6,12 @@
  */
 
 #include <iostream>
+#include <vector>
 
 #include "graph.hpp"
 
 int main() {
-  strukdat::graph<char> g;
+  strukdat::graph<int> g;
 
   g.add_vertex('a');
   g.add_vertex('b');
@@ -24,6 +25,7 @@ int main() {
   g.add_edge('c', 'e');
 
   g.bfs('a', [](char a) { std::cout << a << ' '; });
-
+  printf("\n");
+  g.dfs('a', [](char a) { std::cout << a << ' '; });
   return 0;
 }
